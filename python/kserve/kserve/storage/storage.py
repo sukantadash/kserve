@@ -221,7 +221,7 @@ class Storage(object):
                     raise RuntimeError(
                         "Failed to find ca bundle file(%s)." % ca_bundle_full_path
                     )
-        logger.info("Env Var AWS_CA_BUNDLE = %s", os.getenv("AWS_CA_BUNDLE"))
+        logger.info("Before download Env Var AWS_CA_BUNDLE = %s", os.getenv("AWS_CA_BUNDLE"))
         s3 = boto3.resource("s3", **kwargs)
         parsed = urlparse(uri, scheme="s3")
         bucket_name = parsed.netloc
