@@ -133,6 +133,7 @@ class Storage(object):
             ):
                 if key in storage_secret_json:
                     os.environ[env_var] = storage_secret_json.get(key)
+                    logger.info("Env Var %s = %s", env_var, os.getenv(env_var))
 
         if (
             storage_secret_json.get("type", "") == "hdfs"
